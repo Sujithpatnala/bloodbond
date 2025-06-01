@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BloodBond - Every Drop Counts</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css"> <!-- Add your custom CSS file -->
+</head>
+
+<body>
+  <div id="loading-spinner" class="spinner hidden"></div>
+
+  <header>
+    <div class="logo-container">
+      <img src="assets/logo.png" alt="BloodBond logo with a red drop symbol" class="logo" />
+      <h1>BloodBond</h1>
+    </div>
+    <nav aria-label="Main Navigation">
+  <a href="#" aria-label="Home page">Home</a>
+  <a href="request.html" aria-label="Request blood page">Request</a>
+  <a href="donate.html" aria-label="Donate blood page">Donate</a>
+  <a href="#find-donors" aria-label="Find blood donors section">Find Donors</a>
+  <a href="contact.html" aria-label="Contact page">Contact</a>
+  <a href="login-register.html" class="login-btn" aria-label="Login or Register">Login/Register</a>
+</nav>
+
+  </header>
+
+  <div class="container">
+    <section class="hero-box">
+      <div class="hero-content">
+        <h2>Every Drop Counts<br>Save a Life Today</h2>
+        <p>Join our community to request or donate blood in emergencies. Together we can make a difference.</p>
+        <div class="buttons">
+          <a href="request.html" class="btn request-btn">Request Blood</a>
+          <a href="donate.html" class="btn donate-btn">Donate Now</a>
+        </div>
+        
+        <!-- Status Box Added Here -->
+        <div class="status-box">
+          <div class="availability-toggle">
+            <span>Available for Donation:</span>
+            <label class="switch">
+              <input type="checkbox">
+              <span class="slider round"></span>
+            </label>
+          </div>
+          <div class="status-buttons">
+            <button class="history-btn" onclick="openModal('requestModal')">Request History</button>
+            <button class="history-btn" onclick="openModal('donationModal')">Donation History</button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="hero-img">
+        <img src="assets/hero.png" alt="Blood Donation Illustration">
+      </div>
+    </section>
+
+    <section class="live-requests">
+      <h2>Live Blood Requests</h2>
+      <div class="requests-container">
+        <div class="request-card">
+          <h3>B+</h3>
+          <p>Hyderabad</p>
+          <span>Urgent</span>
+        </div>
+        <div class="request-card">
+          <h3>O-</h3>
+          <p>Vijayawada</p>
+          <span>Within 24 hrs</span>
+        </div>
+        <div class="request-card">
+          <h3>A+</h3>
+          <p>Vizag</p>
+          <span>Urgent</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="blood-availability">
+  <h2>Blood Availability in Nearby Blood Banks</h2>
+  <div class="availability-grid">
+    <div class="blood-group-card low">
+      <img src="assets/blood_packet_half.png" alt="Blood Packet" class="blood-packet-img">
+      <h3>A+</h3>
+      <p>Low</p>
+    </div>
+    <div class="blood-group-card medium">
+      <img src="assets/blood_packet_half.png" alt="Blood Packet" class="blood-packet-img">
+      <h3>A-</h3>
+      <p>Medium</p>
+    </div>
+    <div class="blood-group-card high">
+      <img src="assets/blood_packet_half.png" alt="Blood Packet" class="blood-packet-img">
+      <h3>B+</h3>
+      <p>High</p>
+    </div>
+    <div class="blood-group-card low">
+      <img src="assets/blood_packet_half.png" alt="Blood Packet" class="blood-packet-img">
+      <h3>B-</h3>
+      <p>Low</p>
+    </div>
+    <div class="blood-group-card high">
+      <img src="assets/blood_packet_half.png" alt="Blood Packet" class="blood-packet-img">
+      <h3>AB+</h3>
+      <p>High</p>
+    </div>
+    <div class="blood-group-card medium">
+      <img src="assets/blood_packet_half.png" alt="Blood Packet" class="blood-packet-img">
+      <h3>AB-</h3>
+      <p>Medium</p>
+    </div>
+    <div class="blood-group-card high">
+      <img src="assets/blood_packet_half.png" alt="Blood Packet" class="blood-packet-img">
+      <h3>O+</h3>
+      <p>High</p>
+    </div>
+    <div class="blood-group-card low">
+      <img src="assets/blood_packet_half.png" alt="Blood Packet" class="blood-packet-img">
+      <h3>O-</h3>
+      <p>Low</p>
+    </div>
+  </div>
+</section>
+
+<!-- 🔍 Find Donors Section -->
+<section class="find-donors" id="find-donors">
+  <h2>Find Donors Nearby</h2>
+  <p>Search for blood donors around you based on blood group and location.</p>
+  <form class="find-donors-form">
+    <div class="form-group">
+      <label for="blood-group">Select Blood Group:</label>
+      <select id="blood-group" name="blood-group" required>
+        <option value="">--Choose--</option>
+        <option value="A+">A+</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B-">B-</option>
+        <option value="O+">O+</option>
+        <option value="O-">O-</option>
+        <option value="AB+">AB+</option>
+        <option value="AB-">AB-</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="location">Enter Pincode:</label>
+      <input type="text" id="location" name="location" placeholder="e.g., 530002" required>
+    </div>
+    <button type="submit" class="btn search-btn">Search Donors</button>
+  </form>
+</section>
+
+
+  </div>
+
+  <footer>
+    <p>&copy; 2025 BloodBond. Made with ❤️ by Sujith.</p>
+  </footer>
+
+  <div id="requestModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('requestModal')">&times;</span>
+    <h2>Your Request History</h2>
+    <ul>
+      <li><strong>Date:</strong> 12-May-2025 | <strong>Blood:</strong> A+ | <strong>Location:</strong> Hyderabad | <strong>Status:</strong> Fulfilled</li>
+      <li><strong>Date:</strong> 05-Apr-2025 | <strong>Blood:</strong> B+ | <strong>Location:</strong> Vizag | <strong>Status:</strong> Pending</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Donation History Modal -->
+<div id="donationModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('donationModal')">&times;</span>
+    <h2>Your Donation History</h2>
+    <ul>
+      <li><strong>Date:</strong> 28-Mar-2025 | <strong>Blood:</strong> O- | <strong>Location:</strong> Vijayawada | <strong>Status:</strong> Completed</li>
+      <li><strong>Date:</strong> 10-Jan-2025 | <strong>Blood:</strong> AB+ | <strong>Location:</strong> Guntur | <strong>Status:</strong> Completed</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Your JS for modal -->
+<script>
+  function openModal(id) {
+    document.getElementById(id).style.display = "block";
+  }
+  function closeModal(id) {
+    document.getElementById(id).style.display = "none";
+  }
+  window.onclick = function(event) {
+    if (event.target === document.getElementById("requestModal")) closeModal("requestModal");
+    if (event.target === document.getElementById("donationModal")) closeModal("donationModal");
+  };
+</script>
+
+</body>
+</html>
